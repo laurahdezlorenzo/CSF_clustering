@@ -16,15 +16,15 @@ def load_data_HCSC(spss_file):
     # set index to NHC_LCR bc LCR studies!
     data = data.set_index('NHC_LCR')
 
-    des_file = open('/home/laura/Documents/CODE/APP_genetics/timeseries_biomarkers/data/HCSC/variables/descriptive.txt', 'r')
+    des_file = open('/home/laura/Documents/CODE/APP_genetics/clustering_biomarkers/data/HCSC/variables/descriptive.txt', 'r')
     des = des_file.read().split('\n')
     des_file.close()
 
-    lcr_file = open('/home/laura/Documents/CODE/APP_genetics/timeseries_biomarkers/data/HCSC/variables/lcr.txt', 'r')
+    lcr_file = open('/home/laura/Documents/CODE/APP_genetics/clustering_biomarkers/data/HCSC/variables/lcr.txt', 'r')
     lcr = lcr_file.read().split('\n')
     lcr_file.close()
 
-    cog_file = open('/home/laura/Documents/CODE/APP_genetics/timeseries_biomarkers/data/HCSC/variables/cognitive.txt', 'r')
+    cog_file = open('/home/laura/Documents/CODE/APP_genetics/clustering_biomarkers/data/HCSC/variables/cognitive.txt', 'r')
     cog = cog_file.read().split('\n')
     cog_file.close()
 

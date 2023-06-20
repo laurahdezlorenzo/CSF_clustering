@@ -264,9 +264,9 @@ def process_input_variables_multidim(bios):
 
     '''Process selected biomarker data - more dimensions'''
 
-    indata1 = pd.read_csv(f'/home/laura/Documents/CODE/APP_genetics/timeseries_biomarkers/data/ADNI/{bios[0]}_data.csv', index_col=0)
-    indata2 = pd.read_csv(f'/home/laura/Documents/CODE/APP_genetics/timeseries_biomarkers/data/ADNI/{bios[1]}_data.csv', index_col=0)
-    indata3 = pd.read_csv(f'/home/laura/Documents/CODE/APP_genetics/timeseries_biomarkers/data/ADNI/{bios[2]}_data.csv', index_col=0)
+    indata1 = pd.read_csv(f'/home/laura/Documents/CODE/APP_genetics/clustering_biomarkers/data/ADNI/{bios[0]}_data.csv', index_col=0)
+    indata2 = pd.read_csv(f'/home/laura/Documents/CODE/APP_genetics/clustering_biomarkers/data/ADNI/{bios[1]}_data.csv', index_col=0)
+    indata3 = pd.read_csv(f'/home/laura/Documents/CODE/APP_genetics/clustering_biomarkers/data/ADNI/{bios[2]}_data.csv', index_col=0)
 
     # con estas lineas que siguen me aseguro el mismo orden en los 3 dfs
     merge = pd.concat([indata1, indata2, indata3], join='inner', axis=1)
@@ -302,7 +302,7 @@ def process_input_variables_multidim(bios):
 
 if __name__ == "__main__":
 
-    data = load_data_ADNI('/home/laura/Documents/CODE/APP_genetics/timeseries_biomarkers/data/ADNI/ADNIMERGE.csv')
+    data = load_data_ADNI('/home/laura/Documents/CODE/APP_genetics/clustering_biomarkers/data/ADNI/ADNIMERGE.csv')
     print()
 
     for biomarker in ['ABETA', 'TAU', 'PTAU']:
@@ -313,7 +313,7 @@ if __name__ == "__main__":
 
         descriptive_data, diagnosis_3years = process_descriptive_variables(data)
         biomarker_data = process_input_variables(biomarker, data, diagnosis_3years)
-        biomarker_data.T.to_csv(f'da/home/laura/Documents/CODE/APP_genetics/timeseries_biomarkers/datata/ADNI/{biomarker}_data.csv')
+        biomarker_data.T.to_csv(f'da/home/laura/Documents/CODE/APP_genetics/clustering_biomarkers/datata/ADNI/{biomarker}_data.csv')
         
 
 
